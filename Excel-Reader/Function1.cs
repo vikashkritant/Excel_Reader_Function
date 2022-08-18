@@ -20,13 +20,13 @@ namespace Excel_Reader
             try
             {
                 var ConnectionString = Environment.GetEnvironmentVariable("AzureWebJobsStorage");
-                // Setup the connection to the storage account
+                
                 CloudStorageAccount storageAccount = CloudStorageAccount.Parse(ConnectionString);
-                // Connect to the blob storage
+                
                 CloudBlobClient serviceClient = storageAccount.CreateCloudBlobClient();
-                // Connect to the blob container
+                
                 CloudBlobContainer container = serviceClient.GetContainerReference("exceldata");
-                // Connect to the blob file
+                
                 CloudBlockBlob blob = container.GetBlockBlobReference(name);
                 
 
